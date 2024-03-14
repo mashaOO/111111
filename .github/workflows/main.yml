@@ -1,0 +1,23 @@
+name: CI
+
+on:
+push:
+branches: ["main"]
+pull_request:
+jobs:
+  my_build_job:
+  runs-on: ubuntu-lasted
+  steps:
+  -user: actions/checkous@v3
+  -name: nmp install, test and build
+  run: |
+    nmp install
+    nmp run build
+  -name: Run a one-line script
+  run: echo Hello, world!
+-name: Run a multi-line script
+run: |
+  echo Add other aactions to build,
+  echo test, and deploy your project.
+-name: Run JS file for test
+run: node script.js
